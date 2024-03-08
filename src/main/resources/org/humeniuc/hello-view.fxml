@@ -14,264 +14,301 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="766.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="766.0" prefWidth="1280.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.humeniuc.HelloController">
-  <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-  </padding>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.humeniuc.GUIController">
    <children>
-      <HBox prefHeight="350.0" prefWidth="1200.0">
+      <HBox alignment="CENTER_RIGHT" prefHeight="92.0" prefWidth="1280.0" />
+      <VBox maxHeight="796.0" maxWidth="1280.0" minHeight="684.0" minWidth="1280.0" prefHeight="704.0" prefWidth="1280.0" spacing="20.0" styleClass="mainPane" stylesheets="@style.css">
+        <padding>
+          <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        </padding>
          <children>
-            <VBox prefHeight="350.0" prefWidth="581.0">
+            <HBox prefHeight="350.0" prefWidth="1200.0" stylesheets="@style.css">
                <children>
-                  <TextField layoutX="10.0" layoutY="30.0" prefHeight="80.0" prefWidth="541.0">
-                     <VBox.margin>
-                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font size="32.0" />
-                     </font>
-                  </TextField>
-                  <TextField layoutX="30.0" layoutY="35.0" prefHeight="80.0" prefWidth="541.0">
-                     <VBox.margin>
-                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font size="32.0" />
-                     </font>
-                  </TextField>
-                  <TextField layoutX="10.0" layoutY="97.0" prefHeight="80.0" prefWidth="50.0">
-                     <VBox.margin>
-                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font size="32.0" />
-                     </font>
-                  </TextField>
+                  <VBox prefHeight="330.0" prefWidth="805.0" stylesheets="@style.css">
+                     <children>
+                        <TextField fx:id="polynomial1Box" layoutX="10.0" layoutY="30.0" prefHeight="80.0" prefWidth="541.0" styleClass="highlight" stylesheets="@style.css">
+                           <VBox.margin>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="polynomial2Box" layoutX="30.0" layoutY="35.0" prefHeight="80.0" prefWidth="541.0" styleClass="highlight" stylesheets="@style.css">
+                           <VBox.margin>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="resultBox" editable="false" layoutX="25.0" layoutY="135.0" prefHeight="80.0" prefWidth="541.0" styleClass="highlight" stylesheets="@style.css">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <LineChart horizontalZeroLineVisible="false" prefHeight="350.0" prefWidth="635.0" stylesheets="@style.css" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" stylesheets="@style.css" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" stylesheets="@style.css" />
+                    </yAxis>
+                     <effect>
+                        <Blend />
+                     </effect>
+                  </LineChart>
                </children>
-               <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </HBox.margin>
-            </VBox>
-            <LineChart horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" prefHeight="350.0" prefWidth="635.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
-              <xAxis>
-                <CategoryAxis side="BOTTOM" />
-              </xAxis>
-              <yAxis>
-                <NumberAxis side="LEFT" />
-              </yAxis>
-               <effect>
-                  <Blend />
-               </effect>
-            </LineChart>
+            </HBox>
+            <HBox prefHeight="350.0" prefWidth="600.0" stylesheets="@style.css">
+               <children>
+                  <GridPane prefHeight="330.0" prefWidth="786.0" stylesheets="@style.css">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.0" minWidth="2.0" prefWidth="148.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="301.0" minWidth="0.0" prefWidth="155.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="301.0" minWidth="10.0" prefWidth="155.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="301.0" minWidth="10.0" prefWidth="155.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="301.0" minWidth="10.0" prefWidth="155.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="301.0" minWidth="10.0" prefWidth="155.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+                      <RowConstraints maxHeight="176.0" minHeight="10.0" prefHeight="111.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="149.0" minHeight="10.0" prefHeight="118.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="114.0" minHeight="10.0" prefHeight="114.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#onClickTest" prefHeight="138.0" prefWidth="187.0" styleClass="highlight" stylesheets="@style.css" text="1" textAlignment="CENTER" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="118.0" prefWidth="257.0" styleClass="highlight" stylesheets="@style.css" text="2" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="190.0" layoutY="10.0" mnemonicParsing="false" prefHeight="118.0" prefWidth="257.0" styleClass="highlight" stylesheets="@style.css" text="3" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="189.0" prefWidth="186.0" styleClass="highlight" stylesheets="@style.css" text="+" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="190.0" layoutY="10.0" mnemonicParsing="false" prefHeight="118.0" prefWidth="257.0" styleClass="highlight" stylesheets="@style.css" text="*" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="144.0" prefWidth="180.0" styleClass="highlight" stylesheets="@style.css" text="4" textFill="WHITE" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="189.0" prefWidth="187.0" styleClass="highlight" stylesheets="@style.css" text="5" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="126.0" prefWidth="295.0" styleClass="highlight" stylesheets="@style.css" text="6" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="163.0" prefWidth="186.0" styleClass="highlight" stylesheets="@style.css" text="-" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="190.0" layoutY="10.0" mnemonicParsing="false" prefHeight="164.0" prefWidth="186.0" styleClass="highlight" stylesheets="@style.css" text="/" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="159.0" prefWidth="180.0" styleClass="highlight" stylesheets="@style.css" text="7" textFill="WHITE" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="118.0" prefWidth="257.0" styleClass="highlight" stylesheets="@style.css" text="8" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="524.0" layoutY="232.0" mnemonicParsing="false" prefHeight="154.0" prefWidth="176.0" styleClass="highlight" stylesheets="@style.css" text="9" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="154.0" prefWidth="176.0" styleClass="highlight" stylesheets="@style.css" text="0" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="153.0" prefWidth="176.0" styleClass="highlight" stylesheets="@style.css" text="^" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="536.0" layoutY="235.0" mnemonicParsing="false" prefHeight="153.0" prefWidth="176.0" styleClass="highlight" stylesheets="@style.css" text="x" textFill="WHITE" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button layoutX="668.0" layoutY="15.0" mnemonicParsing="false" prefHeight="153.0" prefWidth="176.0" styleClass="highlight" stylesheets="@style.css" text="←" textFill="WHITE" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </Button>
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </GridPane>
+                  <GridPane prefHeight="330.0" prefWidth="395.0" stylesheets="@style.css">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#operationAddition" prefHeight="184.0" prefWidth="148.0" styleClass="highlight" stylesheets="@style.css" text="+" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#operationSubstract" prefHeight="138.0" prefWidth="187.0" styleClass="highlight" stylesheets="@style.css" text="-" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onAction="#operationDifferentiate" prefHeight="213.0" prefWidth="148.0" styleClass="highlight" stylesheets="@style.css" text="d/dx" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button layoutX="10.0" layoutY="120.0" mnemonicParsing="false" onAction="#operationMultiply" prefHeight="148.0" prefWidth="148.0" styleClass="highlight" stylesheets="@style.css" text="*" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button layoutX="173.0" layoutY="15.0" mnemonicParsing="false" prefHeight="138.0" prefWidth="187.0" styleClass="highlight" stylesheets="@style.css" text="÷" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <HBox styleClass="highlight" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#operationIntegrate" prefHeight="100.0" prefWidth="85.0" styleClass="emptyHighlight" stylesheets="@style.css" text="∫" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                              </Button>
+                              <VBox prefHeight="100.0" prefWidth="50.0" spacing="50.0" stylesheets="@style.css">
+                                 <children>
+                                    <TextField styleClass="highlight" stylesheets="@style.css" />
+                                    <TextField styleClass="highlight" stylesheets="@style.css" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </GridPane>
+               </children>
+            </HBox>
          </children>
-      </HBox>
-      <HBox prefHeight="350.0" prefWidth="600.0">
-         <children>
-            <GridPane prefHeight="330.0" prefWidth="874.0">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.0" minWidth="2.0" prefWidth="148.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="301.0" minWidth="0.0" prefWidth="155.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="301.0" minWidth="10.0" prefWidth="155.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="301.0" minWidth="10.0" prefWidth="155.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="301.0" minWidth="10.0" prefWidth="155.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
-                <RowConstraints maxHeight="176.0" minHeight="10.0" prefHeight="111.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="149.0" minHeight="10.0" prefHeight="118.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="114.0" minHeight="10.0" prefHeight="114.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <Button mnemonicParsing="false" prefHeight="138.0" prefWidth="187.0" text="1" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                     <GridPane.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </GridPane.margin>
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="118.0" prefWidth="257.0" text="2" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </GridPane.margin>
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="190.0" layoutY="10.0" mnemonicParsing="false" prefHeight="118.0" prefWidth="257.0" text="3" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </GridPane.margin>
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="189.0" prefWidth="186.0" text="+" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </GridPane.margin>
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="190.0" layoutY="10.0" mnemonicParsing="false" prefHeight="118.0" prefWidth="257.0" text="*" GridPane.columnIndex="4" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </GridPane.margin>
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="144.0" prefWidth="180.0" text="4" GridPane.rowIndex="2">
-                     <GridPane.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </GridPane.margin>
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="189.0" prefWidth="187.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                     <GridPane.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </GridPane.margin>
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="126.0" prefWidth="295.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                     <GridPane.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </GridPane.margin>
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="163.0" prefWidth="186.0" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2">
-                     <GridPane.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </GridPane.margin>
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="190.0" layoutY="10.0" mnemonicParsing="false" prefHeight="164.0" prefWidth="186.0" text="/" GridPane.columnIndex="4" GridPane.rowIndex="2">
-                     <GridPane.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </GridPane.margin>
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="159.0" prefWidth="180.0" text="7" GridPane.rowIndex="3">
-                     <GridPane.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </GridPane.margin>
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="118.0" prefWidth="257.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                     <GridPane.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </GridPane.margin>
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="524.0" layoutY="232.0" mnemonicParsing="false" prefHeight="154.0" prefWidth="176.0" text="9" GridPane.columnIndex="2" GridPane.rowIndex="3">
-                     <GridPane.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </GridPane.margin>
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Button>
-                  <Button mnemonicParsing="false" prefHeight="154.0" prefWidth="176.0" text="0" GridPane.columnIndex="3" GridPane.rowIndex="3">
-                     <GridPane.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </GridPane.margin>
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Button>
-                  <Button mnemonicParsing="false" prefHeight="153.0" prefWidth="176.0" text="^" GridPane.columnIndex="4" GridPane.rowIndex="3">
-                     <GridPane.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </GridPane.margin>
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Button>
-               </children>
-               <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </HBox.margin>
-            </GridPane>
-            <GridPane prefHeight="357.0" prefWidth="316.0">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </HBox.margin>
-               <children>
-                  <Button mnemonicParsing="false" prefHeight="184.0" prefWidth="148.0" text="+" textAlignment="CENTER">
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </GridPane.margin>
-                  </Button>
-                  <Button mnemonicParsing="false" prefHeight="138.0" prefWidth="187.0" text="-" textAlignment="CENTER" GridPane.columnIndex="1">
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </GridPane.margin>
-                  </Button>
-                  <Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" prefHeight="213.0" prefWidth="148.0" text="d/dx" textAlignment="CENTER" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </GridPane.margin>
-                  </Button>
-                  <Button layoutX="10.0" layoutY="120.0" mnemonicParsing="false" prefHeight="148.0" prefWidth="148.0" text="*" textAlignment="CENTER" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </GridPane.margin>
-                  </Button>
-                  <Button layoutX="173.0" layoutY="15.0" mnemonicParsing="false" prefHeight="138.0" prefWidth="187.0" text="÷" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </GridPane.margin>
-                  </Button>
-                  <Button layoutX="173.0" layoutY="125.0" mnemonicParsing="false" prefHeight="138.0" prefWidth="187.0" text="∫" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </GridPane.margin>
-                  </Button>
-               </children>
-            </GridPane>
-         </children>
-      </HBox>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </VBox>
    </children>
 </VBox>

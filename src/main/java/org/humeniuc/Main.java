@@ -9,9 +9,9 @@ import java.util.regex.Pattern;
 public class Main {
 
     public static void main(String[] args) {
-        String s = " 2/3X^3 + 6  / x2 -x - 7/4";
+        //GUIApplication.main(new String[0]);
 
-        System.out.println(PolynomialParser.parsePolynomial(s));
-
+        Polynomial pol1 = new Polynomial(PolynomialParser.parsePolynomial("x^2"));
+        System.out.println(pol1);
     }
 }

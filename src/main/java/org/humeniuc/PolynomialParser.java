@@ -20,7 +20,7 @@ public class PolynomialParser {
     static Fraction parseFreeTerm(String s){
         Fraction freeTerm = new Fraction(0);
 
-        String freeTrmFrm = "(\\+|-)?\\s*\\d+\\s*/\\s*\\d+\\s*$";
+        String freeTrmFrm = "(\\+|-)?\\s*\\d+\\s*/?\\s*\\d*\\s*$";
         Pattern freeTrmPat = Pattern.compile(freeTrmFrm);
         Matcher freeTrmMat = freeTrmPat.matcher(s);
 

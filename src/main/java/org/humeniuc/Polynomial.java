@@ -15,11 +15,11 @@ public class Polynomial {
     // si pe langa sa asigneze variabila intanta scoate din lista toti coeficientii nuli
     // pentru a economisi memorie si a reduce timpul de executie a celorlalte operatii
     public Polynomial(TreeMap<Integer, Fraction> coef) {
-        for(Map.Entry<Integer, Fraction> e: coef.entrySet()){
-            if(e.getValue().isZero()){
-                coef.remove(e.getKey());
-            }
-        }
+//        for(Map.Entry<Integer, Fraction> e: coef.entrySet()){
+//            if(e.getValue().isZero()){
+//                coef.remove(e.getKey());
+//            }
+//        }
 
         this.coef = coef;
     }
