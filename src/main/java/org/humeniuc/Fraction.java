@@ -26,7 +26,6 @@ public class Fraction{
     }
 
     public Fraction(String s){
-        // TODO: parsarea unui string de forma x/y
         String frm = "\\d+";
         Pattern pat = Pattern.compile(frm);
         Matcher mat = pat.matcher(s);
@@ -44,6 +43,7 @@ public class Fraction{
     boolean isZero(){
         return (this.sus == 0);
     }
+    boolean isNegative(){ return (this.sus < 0);}
 
     // algoritm pentru simpificarea fractiei
     void simplify(){
@@ -117,6 +117,10 @@ public class Fraction{
     Fraction sub(Fraction sub){
         return this.add(sub.negative());
     }
+
+//    public int compareTo(Fraction f2){
+//
+//    }
 
     @Override
     public String toString() {

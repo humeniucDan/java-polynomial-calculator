@@ -20,7 +20,7 @@ public class GUIApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), xRez, yRez);
         scene.setFill(Color.TRANSPARENT);
         stage.initStyle(StageStyle.TRANSPARENT);
-        stage.setTitle("Polynomial Calculator");
+        stage.setTitle(title);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.sizeToScene();

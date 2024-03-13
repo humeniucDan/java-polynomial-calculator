@@ -34,7 +34,7 @@ public class GUIController {
     protected void operationAddition() {
         getOperandsData();
 
-        result = polynomial1.add(polynomial2);
+        result = PolynomialOperations.add(polynomial1, polynomial2);
 
         showResult();
     }
@@ -42,7 +42,7 @@ public class GUIController {
     protected void operationSubstract() {
         getOperandsData();
 
-        result = polynomial1.sub(polynomial2);
+        result = PolynomialOperations.sub(polynomial1, polynomial2);
 
         showResult();
     }
@@ -50,24 +50,32 @@ public class GUIController {
     protected void operationMultiply() {
         getOperandsData();
 
-        result = polynomial1.multiply(polynomial2);
+        result = PolynomialOperations.multiply(polynomial1, polynomial2);
 
         showResult();
     }
 
-//    protected void operationDivide() {
-//        getOperandsData();
-//
-//        result = polynomial1.divideBy(polynomial2);
-//
-//        showResult();
-//    }
+    @FXML
+    protected void operationDivide() {
+        getOperandsData();
+
+        Polynomial res[] = new Polynomial[2];
+
+        if(polynomial2.coef.size() == 0){
+            resultBox.setText("Division by ZERO");
+            return;
+        }
+
+        res = PolynomialOperations.divideBy(polynomial1, polynomial2);
+
+        resultBox.setText( "cat= " + res[0] + ";  rest=" + res[1]);
+    }
 
     @FXML
     protected void operationDifferentiate() {
         getOperandsData();
 
-        result = polynomial1.derivate();
+        result = PolynomialOperations.derivate(polynomial1);
 
         showResult();
     }
@@ -75,7 +83,7 @@ public class GUIController {
     protected void operationIntegrate() {
         getOperandsData();
 
-        result = polynomial1.integrate();
+        result = PolynomialOperations.integrate(polynomial1);
 
         showResult();
     }

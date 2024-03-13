@@ -20,13 +20,22 @@ public class PolynomialParser {
     static Fraction parseFreeTerm(String s){
         Fraction freeTerm = new Fraction(0);
 
-        String freeTrmFrm = "(\\+|-)?\\s*\\d+\\s*/?\\s*\\d*\\s*$";
+        String freeTrmFrm = "(\\+|-)?\\s*\\d+\\s*/\\s*\\d+\\s*";
         Pattern freeTrmPat = Pattern.compile(freeTrmFrm);
         Matcher freeTrmMat = freeTrmPat.matcher(s);
 
         if(freeTrmMat.find()){
             String freeTermString = freeTrmMat.group();
             freeTerm =  parseCoef(freeTermString).multiply(new Fraction(parseSign(freeTermString)));
+        }
+
+        freeTrmFrm = "(\\+|-)?\\s*\\d+\\s*";
+        freeTrmPat = Pattern.compile(freeTrmFrm);
+        freeTrmMat = freeTrmPat.matcher(s);
+
+        if(freeTrmMat.find()){
+            String freeTermString = freeTrmMat.group();
+            freeTerm =  freeTerm.add(parseCoef(freeTermString).multiply(new Fraction(parseSign(freeTermString))));
         }
 
         return freeTerm;
@@ -100,9 +109,13 @@ public class PolynomialParser {
 
         while(polyMat.find()){
             Map.Entry<Integer, Fraction> en = parseMonomial(polyMat.group());
+//            s = polyMat.replaceFirst("_");
+//            polyMat = polPat.matcher(s);
             System.out.println(en);
             tm.put(en.getKey(), en.getValue());
         }
+
+        s = polyMat.replaceAll("_");
 
         tm.put(0, parseFreeTerm(s));
 

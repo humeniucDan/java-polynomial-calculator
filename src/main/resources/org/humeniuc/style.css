@@ -12,6 +12,21 @@
     -fx-background-color: #00000025;
     -fx-background-radius: 15;
 }
+.buttons{
+    -fx-background-color: #00000025;
+    -fx-background-radius: 15;
+}
+.buttons:hover{
+     /*-fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;*/
+     -fx-padding: 2px;
+     -fx-border-insets: 2px;
+     -fx-background-insets: 2px;
+     /*-fx-background-radius: 3px, 3px, 2px, 1px;*/
+     /*-fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
+     -fx-text-fill: -fx-text-base-color;
+     -fx-alignment: CENTER;
+     -fx-content-display: LEFT;
+ }
 .emptyHighlight {
     -fx-background-color: #00000000;
     -fx-background-radius: 15;
