@@ -12,12 +12,71 @@ public class GUIController {
     private TextField polynomial2Box;
     @FXML
     private TextField resultBox;
+    private boolean focusFirst = true;
     private Polynomial polynomial1, polynomial2, result;
 
     @FXML
     protected void onClickTest() {
         resultBox.setText("da");
     }
+
+    protected void type(String charBut) {
+        if(focusFirst){
+            polynomial1Box.setText(polynomial1Box.getText() + charBut);
+        }
+        else {
+            polynomial2Box.setText(polynomial2Box.getText() + charBut);
+        }
+    }
+    @FXML
+    protected void type0() {type("0");}
+    @FXML
+    protected void type1() {type("1");}
+    @FXML
+    protected void type2() {type("2");}
+    @FXML
+    protected void type3() {type("3");}
+    @FXML
+    protected void type4() {type("4");}
+    @FXML
+    protected void type5() {type("5");}
+    @FXML
+    protected void type6() {type("6");}
+    @FXML
+    protected void type7() {type("7");}
+    @FXML
+    protected void type8() {type("8");}
+    @FXML
+    protected void type9() {type("9");}
+    @FXML
+    protected void typePlus() {type("+");}
+    @FXML
+    protected void typeMinus() {type("-");}
+    @FXML
+    protected void typeMul() {type("*");}
+    @FXML
+    protected void typeDiv() {type("/");}
+    @FXML
+    protected void typePow() {type("^");}
+    @FXML
+    protected void typeX() {type("x");}
+    @FXML
+    protected void typeBackSpace() {
+        if(focusFirst){
+            polynomial1Box.setText(polynomial1Box.getText().substring(0, polynomial1Box.getText().length()-1));
+        }
+        else {
+            polynomial2Box.setText(polynomial2Box.getText().substring(0, polynomial2Box.getText().length()-1));
+        }
+    }
+
+    @FXML
+    protected void setFocusToPolynomialBox1() { focusFirst = true;}
+
+    @FXML
+    protected void setFocusToPolynomialBox2() { focusFirst = false;}
+
+
     @FXML
     protected void getOperandsData() {
         System.out.println(polynomial1Box.getText());

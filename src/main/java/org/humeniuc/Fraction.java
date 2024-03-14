@@ -118,6 +118,10 @@ public class Fraction{
         return this.add(sub.negative());
     }
 
+    Fraction pow(Integer pow){
+        return new Fraction((int)Math.pow((double) this.sus, (double) pow), (int)Math.pow((double) this.jos, (double) pow));
+    }
+
 //    public int compareTo(Fraction f2){
 //
 //    }

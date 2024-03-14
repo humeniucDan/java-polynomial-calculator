@@ -24,7 +24,6 @@ public class GUIApplication extends Application {
         stage.setScene(scene);
         stage.setResizable(false);
         stage.sizeToScene();
-
         InputStream icoResource = GUIApplication.class.getResourceAsStream("imgs/math_ico.png");
         Image ico = null;
         if(icoResource != null) ico = new Image(icoResource);

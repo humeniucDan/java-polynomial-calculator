@@ -160,4 +160,14 @@ public class PolynomialOperations {
 
         return new Polynomial(res);
     }
+
+    public static Fraction evaluate(Polynomial pol, Fraction x){
+        Fraction res = new Fraction(0);
+
+        for(Map.Entry<Integer, Fraction> en: pol.coef.entrySet()){
+            res = res.add(x.pow(en.getKey()).multiply(en.getValue()));
+        }
+
+        return res;
+    }
 }

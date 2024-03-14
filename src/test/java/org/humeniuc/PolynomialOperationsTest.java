@@ -53,7 +53,7 @@ class PolynomialOperationsTest {
 
         Polynomial pol1 = new Polynomial(pow1, coef1), pol2 = new Polynomial(pow2, coef2), pol3 = new Polynomial(pow3, coef3);
 
-        assertEquals(pol3.toString(), PolynomialOperations.add(pol1, pol2).toString());
+        assertEquals(pol3.toString(), PolynomialOperations.sub(pol1, pol2).toString());
     }
     @Test
     void subNulify(){
@@ -68,27 +68,11 @@ class PolynomialOperationsTest {
 
         Polynomial pol1 = new Polynomial(pow1, coef1), pol2 = new Polynomial(pow2, coef2), pol3 = new Polynomial(pow3, coef3);
 
-        assertEquals(pol3.toString(), PolynomialOperations.add(pol1, pol2).toString());
+        assertEquals(pol3.toString(), PolynomialOperations.sub(pol1, pol2).toString());
     }
 
     @Test
-    void multiplyByNrNormalOne() {
-        Integer pow1 = -2;
-        Fraction coef1 = new Fraction(1, 4);
-
-        Fraction[] coef2 = new Fraction[]{new Fraction(4)};
-        Integer[] pow2 = new Integer[]{2};
-
-        Fraction[] coef3 = new Fraction[]{new Fraction(1)};
-        Integer[] pow3 = new Integer[]{0};
-
-        Polynomial pol2 = new Polynomial(pow2, coef2), pol3 = new Polynomial(pow3, coef3);
-
-        assertEquals(pol3.toString(), PolynomialOperations.multiplyByNr(pol2, coef1, pow1).toString());
-    }
-
-    @Test
-    void multiplyByNrNormalNormal() {
+    void multiplyByNrNormal() {
         Integer pow1 = 3;
         Fraction coef1 = new Fraction(1, 4);
 
@@ -104,9 +88,9 @@ class PolynomialOperationsTest {
     }
 
     @Test
-    void multiplyByNrNormalZero() {
+    void multiplyByNrZero() {
         Integer pow1 = 0;
-        Fraction coef1 = new Fraction(1, 4);
+        Fraction coef1 = new Fraction(0);
 
         Fraction[] coef2 = new Fraction[]{new Fraction(2), new Fraction(1, 2)};
         Integer[] pow2 = new Integer[]{2, 0};
@@ -131,6 +115,23 @@ class PolynomialOperationsTest {
         Integer[] pow3 = new Integer[]{0};
 
         Polynomial pol1 = new Polynomial(pow1, coef1), pol2 = new Polynomial(pow2, coef2), pol3 = new Polynomial(pow3, coef3);
+
+        assertEquals(pol3.toString(), PolynomialOperations.multiply(pol2, pol1).toString());
+    }
+
+    void multiplyOne() {
+        Fraction[] coef1 = new Fraction[]{new Fraction(2)};
+        Integer[] pow1 = new Integer[]{2};
+
+        Fraction[] coef2 = new Fraction[]{new Fraction(1, 2)};
+        Integer[] pow2 = new Integer[]{-2};
+
+        Fraction[] coef3 = new Fraction[]{new Fraction(0)};
+        Integer[] pow3 = new Integer[]{0};
+
+        Polynomial pol1 = new Polynomial(pow1, coef1), pol2 = new Polynomial(pow2, coef2), pol3 = new Polynomial(pow3, coef3);
+
+        assertEquals(pol3.toString(), PolynomialOperations.multiply(pol1, pol2).toString());
     }
 
     @Test
