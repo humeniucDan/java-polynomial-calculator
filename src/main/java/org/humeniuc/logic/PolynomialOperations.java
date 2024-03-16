@@ -1,4 +1,7 @@
-package org.humeniuc;
+package org.humeniuc.logic;
+
+import org.humeniuc.model.Fraction;
+import org.humeniuc.model.Polynomial;
 
 import java.util.Iterator;
 import java.util.Map;
@@ -94,7 +97,7 @@ public class PolynomialOperations {
     // functie simpla pentru a calcula ordinul uni polinom, adica cea mai mare putere
     // in cazuri cum ar fi acesta este foarte utila uitilizarea unui tree map
     // pentru a mentine relatia de ordine a coeficientiilor in functie de puterile lui x
-    public static int ord(Polynomial pol){
+    public static Integer ord(Polynomial pol){
         if(pol.coef.size() == 0) return 0;
         return pol.coef.firstKey();
     }
@@ -135,14 +138,12 @@ public class PolynomialOperations {
         // adica a tremeniilor liberi intrucat acestia vor disparea dupa derivare
         Iterator<Map.Entry<Integer, Fraction>> it = pol.coef.entrySet().iterator();
 
-        if(it.hasNext() && pol.coef.get(0) != null){
-            it.next();
-        }
-
         Map.Entry<Integer, Fraction> e;
         while(it.hasNext()){
             e = it.next();
-            res.put(e.getKey()-1, e.getValue().multiply(new Fraction(e.getKey())));
+            if(e.getKey() != 0) {
+                res.put(e.getKey()-1, e.getValue().multiply(new Fraction(e.getKey())));
+            }
         }
 
         return new Polynomial(res);
@@ -155,7 +156,9 @@ public class PolynomialOperations {
         TreeMap<Integer, Fraction> res = new TreeMap<>();
 
         for(Map.Entry<Integer, Fraction> e: pol.coef.entrySet()){
-            res.put(e.getKey() + 1, e.getValue().divideBy(new Fraction(e.getKey() + 1)));
+            if( e.getKey() != -1){
+                res.put(e.getKey() + 1, e.getValue().divideBy(new Fraction(e.getKey() + 1)));
+            }
         }
 
         return new Polynomial(res);
@@ -169,5 +172,14 @@ public class PolynomialOperations {
         }
 
         return res;
+    }
+
+    public static Fraction definiteIntegral(Polynomial pol, Integer upperBound, Integer lowerBound){
+        return definiteIntegral(pol, new Fraction(upperBound), new Fraction(lowerBound));
+    }
+
+    public static Fraction definiteIntegral(Polynomial pol, Fraction upperBound, Fraction lowerBound){
+        Polynomial indefiniteIntegral = PolynomialOperations.integrate(pol);
+        return PolynomialOperations.evaluate(indefiniteIntegral, upperBound).sub(PolynomialOperations.evaluate(indefiniteIntegral, lowerBound));
     }
 }

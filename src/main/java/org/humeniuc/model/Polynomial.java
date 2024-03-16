@@ -1,4 +1,4 @@
-package org.humeniuc;
+package org.humeniuc.model;
 
 import java.util.*;
 
@@ -7,7 +7,7 @@ public class Polynomial {
 
     // se utilizeaza map pentru a ocupa cat mai putin spatiu in memorie
     // dar a fi si eficient din punct de vedere al timpului de executie
-    TreeMap<Integer, Fraction> coef = new TreeMap<>(Collections.reverseOrder());
+    public TreeMap<Integer, Fraction> coef = new TreeMap<>(Collections.reverseOrder());
 
     // constrictorul primeste ca parametru map-ul de coeficienti
     // si pe langa sa asigneze variabila intanta scoate din lista toti coeficientii nuli

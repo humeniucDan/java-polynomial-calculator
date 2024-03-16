@@ -1,9 +1,11 @@
-package org.humeniuc;
+package org.humeniuc.GUI;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.text.TextFlow;
+import org.humeniuc.logic.PolynomialOperations;
+import org.humeniuc.logic.PolynomialParser;
+import org.humeniuc.model.Fraction;
+import org.humeniuc.model.Polynomial;
 
 public class GUIController {
     @FXML
@@ -12,6 +14,10 @@ public class GUIController {
     private TextField polynomial2Box;
     @FXML
     private TextField resultBox;
+    @FXML
+    private TextField integrationUpperBoundBox;
+    @FXML
+    private TextField integrationLowerBoundBox;
     private boolean focusFirst = true;
     private Polynomial polynomial1, polynomial2, result;
 
@@ -142,8 +148,25 @@ public class GUIController {
     protected void operationIntegrate() {
         getOperandsData();
 
-        result = PolynomialOperations.integrate(polynomial1);
+        if(integrationLowerBoundBox.getText() == "" || integrationLowerBoundBox.getText() == ""){
+            indefiniteIntegral();
+        }
+        else {
+            try{
+                definiteIntegral();
+            } catch(Exception ex){
+                resultBox.setText("Invalid bounds");
+            }
+        }
+    }
 
+    void indefiniteIntegral(){
+        result = PolynomialOperations.integrate(polynomial1);
         showResult();
+    }
+
+    void definiteIntegral(){
+        Fraction res = PolynomialOperations.definiteIntegral(polynomial1, Integer.parseInt(integrationUpperBoundBox.getText()), Integer.parseInt(integrationLowerBoundBox.getText()));
+        resultBox.setText(res.toString());
     }
 }

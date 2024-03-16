@@ -1,4 +1,6 @@
-package org.humeniuc;
+package org.humeniuc.logic;
+
+import org.humeniuc.model.Fraction;
 
 import java.util.AbstractMap;
 import java.util.Map;
@@ -100,7 +102,7 @@ public class PolynomialParser {
         return new AbstractMap.SimpleEntry<>(pow, coef);
     }
 
-    static TreeMap<Integer, Fraction> parsePolynomial(String s){
+    public static TreeMap<Integer, Fraction> parsePolynomial(String s){
         TreeMap<Integer, Fraction> tm = new TreeMap<>();
 
         String monFrm = "(?i)(\\+|-)?\\s*\\d*\\s*/?\\s*\\d*\\s*(\\*|/)?\\s*x\\^?\\d*";
